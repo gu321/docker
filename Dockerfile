@@ -10,7 +10,7 @@ apt-get upgrade -y;\
 apt-get -y install supervisor cron locales mlocate tmux \
 rsyslog tzdata libpng-dev dh-autoreconf ctags \
 mercurial autoconf automake libtool nasm make pkg-config git \
-openssh-server libpython-dev python-dev \
+openssh-server libpython-dev python-dev libpq-dev \
 logrotate build-essential libsnappy-dev zlib1g-dev \
 python3 sudo curl libpython3-dev netcat libffi-dev \
 silversearcher-ag iputils-ping \
