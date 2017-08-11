@@ -7,7 +7,7 @@ COPY resolv.conf /etc/resolv.conf
 
 RUN apt-get update ; \
 apt-get upgrade -y;\
-apt-get -y install supervisor cron locales mlocate \
+apt-get -y install supervisor cron locales mlocate tmux \
 rsyslog tzdata libpng-dev dh-autoreconf ctags \
 mercurial autoconf automake libtool nasm make pkg-config git \
 openssh-server libpython-dev python-dev \
