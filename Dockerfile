@@ -2,7 +2,6 @@ FROM ubuntu:17.10
 
 ENV DEBIAN_FRONTEND noninteractive
 
-COPY resolv.conf /etc/resolv.conf
 
 
 RUN apt-get update ; \
