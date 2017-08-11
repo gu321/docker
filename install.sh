@@ -3,10 +3,13 @@
 USER_PID=6188
 groupadd -g $USER_PID dev
 useradd -u $USER_PID -g $USER_PID -s /bin/bash -m dev
+echo "dev ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ;
 
 USER_PID=5188
 groupadd -g $USER_PID ol
 useradd -u $USER_PID -g $USER_PID -s /bin/bash -m ol
+echo "ol ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ;
+
 
 if [[ -a /etc/supervisor/conf.d/supervisord.conf ]]; then
 exit 0
