@@ -21,6 +21,11 @@ HISTSIZE=200000
 HISTFILESIZE=200000
 
 export TERM='xterm-256color'
-export PS1="\[\e[36;1m\]\u \w \[\e[0m\]"
-export PATH=~/.py/bin:$PATH
+export PS1="\[\e[33;1m\]\u \w \[\e[0m\]"
+export PATH=~/.py3env/bin:$PATH
 
+if [ -f ~/.tmux_default ]; then
+    ~/.tmux_default > /dev/null 2>&1 
+fi
+
+[[ -s ~/.autojump/etc/profile.d/autojump.sh ]] && source ~/.autojump/etc/profile.d/autojump.sh
