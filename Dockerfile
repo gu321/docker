@@ -26,8 +26,10 @@ pip2 install hg-git ;\
 updatedb ;\
 cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp;
 
+RUN git clone https://github.com/gu321/docker.git /tmp/docker --depth=1;\
+rsync -av /tmp/docker/data/ /;
 
-RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim;\
+RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim --depth=1;\
 vim +PluginInstall +qall;\
 sed -i '/colorscheme/ i colorscheme solarized' /etc/vim/vimrc.local;\
 mkdir -p /etc/vim/bundle/template/
