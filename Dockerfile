@@ -36,12 +36,10 @@ mkdir -p /etc/vim/bundle/template/
 
 COPY vim.py /etc/vim/bundle/template/
 
-COPY install.sh /tmp/install.sh
-
 
 COPY data/etc/rc.local /etc/rc.local
 COPY data/root/.bashrc /root/.bashrc
-
+COPY install.sh /tmp/install.sh
 RUN /tmp/install.sh;rm /tmp/install.sh
 
 #COPY requirement.txt /tmp/requirement.txt
