@@ -261,7 +261,7 @@ let g:autopep8_disable_show_diff=1
 "
 """""""""""""""""""""""""""""""""""""""
 
-colorscheme solarized
+"colorscheme
 
 set t_Co=256
 let g:solarized_termcolors=256
