@@ -14,7 +14,6 @@ openssh-server libpython-dev python-dev \
 logrotate build-essential libsnappy-dev zlib1g-dev \
 python3.6 sudo curl libpython3.6-dev netcat libffi-dev \
 nodejs npm vim xtail;\
-echo "ol ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ;\
 locale-gen zh_CN.UTF-8; \
 curl https://bootstrap.pypa.io/get-pip.py|python3.6 ;\
 curl https://bootstrap.pypa.io/get-pip.py|python2 ;\
