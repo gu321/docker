@@ -37,9 +37,7 @@ RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/b
 vim +PluginInstall +qall;\
 sed -i '/colorscheme/ i colorscheme solarized' /etc/vim/vimrc.local;
 
-
-
-RUN /tmp/install.sh;rm /tmp/install.sh
+RUN bash /tmp/install.sh;rm /tmp/install.sh
 
 #COPY requirement.txt /tmp/requirement.txt
 #RUN /home/ol/.py3env/bin/pip install -r /tmp/requirement.txt
