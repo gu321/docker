@@ -51,7 +51,6 @@ USER ol
 
 WORKDIR /home/ol
 
-COPY data/root/.bashrc /home/ol/.bashrc
 
 
 USER root
