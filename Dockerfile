@@ -3,11 +3,10 @@ FROM ubuntu:17.10
 ENV DEBIAN_FRONTEND noninteractive
 
 
-
 RUN apt-get update ; \
 apt-get upgrade -y;\
 apt-get -y install supervisor cron locales mlocate tmux \
-rsyslog tzdata libpng-dev dh-autoreconf ctags \
+rsyslog tzdata libpng-dev dh-autoreconf ctags dstat \
 mercurial autoconf automake libtool nasm make pkg-config git \
 openssh-server libpython-dev python-dev libpq-dev \
 logrotate build-essential libsnappy-dev zlib1g-dev \
