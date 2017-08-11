@@ -2,7 +2,7 @@
 
 function INIT_USER {
 groupadd -g $2 $1
-useradd -u $2 -g $1 -s /bin/bash -m $1
+useradd -u $2 -g $2 -s /bin/bash -m $1
 echo -e "$1 ALL=(ALL) NOPASSWD: ALL\n" >> /etc/sudoers ;
 rsync -av /tmp/docker_home/home/  /home/$1/
 chown -R $1:$1 /home/$1/*
