@@ -1,0 +1,24 @@
+cmd=$(which tmux)      # tmux path
+session=$USER # session name
+
+if [ -z $cmd ]; then
+    echo "You need to install tmux."
+    exit 1
+fi
+
+$cmd has -t $session 2> /dev/null
+$cmd set -g default-terminal "screen-256color"
+$cmd set -g status-fg colour238
+$cmd set -g status-bg black
+
+if [ $? != 0 ]; then
+    $cmd new -d -n py -s $session "cd ~/;bash"
+    $cmd splitw -h -p 15 -t $session "source ~/.bash_profile;cd ~/;bash"
+    $cmd new-window -n code
+    $cmd selectw -t $session:0
+    $cmd select-pane -L
+fi
+
+$cmd att -t $session
+
+exit 0

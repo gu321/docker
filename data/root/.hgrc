@@ -1,0 +1,61 @@
+[ui]
+
+# 去掉下一行注释并改成你的名字和邮箱
+username = xpure <xpure@foxmail.com>
+merge = internal:merge
+editor = vim
+
+verbose = True
+#ssh = ssh -i ~/.ssh/id_rsa -C
+ignore = ~/.hgignore
+
+[merge-tools]
+#mymergetool.premerge = True
+vimdiff.executable = vim
+vimdiff.args = -d $base $local $output $other +close +close
+
+[extensions]
+hggit = 
+hgext.purge=
+color=
+hgext.fetch=
+hgext.graphlog =
+progress =
+bookmarks =
+hgext.bookmarks=
+
+[web]
+cacerts = /etc/ssl/certs/ca-certificates.crt
+
+[color]
+status.modified = blue underline red_background
+status.added = green
+status.removed = red blue_background
+status.deleted = cyan underline
+status.unknown = magenta underline
+status.ignored = black
+
+diff.diffline =
+diff.extended = cyan
+diff.file_a = red
+diff.file_b = green
+diff.hunk = magenta
+diff.deleted = red
+diff.inserted = green
+diff.changed = white
+diff.trailingwhitespace = red_background
+
+[alias]
+blame = annotate --user --number
+bdiff = diff -r "max(ancestors('$1') and branch(default)):'$1'"
+slog = log --template '{rev}:{node|short} {desc|firstline}\n'
+vimdiff = resolve -t vimdiff $1
+
+[auth]
+#bb.prefix = https://www.kancloud.cn
+#bb.username =  
+#bb.password =  
+
+#bb.prefix = https://github.com
+#bb.username = 
+#bb.password = 

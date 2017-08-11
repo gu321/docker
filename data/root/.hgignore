@@ -1,0 +1,11 @@
+syntax: glob
+*.elc
+*.orig
+*.pyc
+*~
+*.swo
+*.swp
+*.bak
+.svn
+.build
+nohup.out
