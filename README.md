@@ -8,8 +8,7 @@ docker exec -it gu321 bash
 
 启动之后
 
-需要初始化home目录，初始化代码见：
+需要初始化home目录的代码见：
 
-线上环境 ： https://github.com/gu321/docker_home_ol
+https://github.com/gu321/docker_home
 
-开发环境 ： https://github.com/gu321/docker_home_dev
