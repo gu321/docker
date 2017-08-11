@@ -4,7 +4,7 @@ function INIT_USER {
 groupadd -g $2 $1
 useradd -u $2 -g $USER_PID -s /bin/bash -m $1
 echo -e "$1 ALL=(ALL) NOPASSWD: ALL\n" >> /etc/sudoers ;
-cp /root/.bashrc /home/$1/
+rsync -av /root/ /home/$1/
 chown -R $1:$1 /home/$1/*
 }
 
