@@ -26,25 +26,18 @@ pip2 install hg-git ;\
 updatedb ;\
 cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp;
 
-COPY vimrc /etc/vim/vimrc.local
-COPY fix_print.py /usr/lib/python3.6/lib2to3/fixes/fix_print.py;
 
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim;\
 vim +PluginInstall +qall;\
 sed -i '/colorscheme/ i colorscheme solarized' /etc/vim/vimrc.local;\
 mkdir -p /etc/vim/bundle/template/
 
-COPY vim.py /etc/vim/bundle/template/
 
 
-COPY data/etc/rc.local /etc/rc.local
-COPY data/root/.bashrc /root/.bashrc
-COPY install.sh /tmp/install.sh
 RUN /tmp/install.sh;rm /tmp/install.sh
 
 #COPY requirement.txt /tmp/requirement.txt
 #RUN /home/ol/.py3env/bin/pip install -r /tmp/requirement.txt
-
 
 USER ol
 
