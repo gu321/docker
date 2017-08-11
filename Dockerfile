@@ -7,14 +7,13 @@ COPY resolv.conf /etc/resolv.conf
 
 RUN apt-get update ; \
 apt-get upgrade -y;\
-apt-get -y install supervisor cron locales \
+apt-get -y install supervisor cron locales mlocate tmux \
 rsyslog tzdata libpng-dev dh-autoreconf ctags \
 mercurial autoconf automake libtool nasm make pkg-config git \
 openssh-server libpython-dev python-dev libpq-dev \
 logrotate build-essential libsnappy-dev zlib1g-dev \
 python3.6 sudo curl libpython3.6-dev netcat libffi-dev \
 nodejs npm vim xtail;\
-echo "ol ALL=(ALL) NOPASSWD: ALL" >> /etc/sudoers ;\
 locale-gen zh_CN.UTF-8; \
 curl https://bootstrap.pypa.io/get-pip.py|python3.6 ;\
 curl https://bootstrap.pypa.io/get-pip.py|python2 ;\
@@ -24,6 +23,7 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org; \
 pip3.6 install virtualenv autopep8 trash-cli;\
 cp /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime;\
 pip2 install hg-git ;\
+updatedb ;\
 cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp;
 
 COPY vimrc /etc/vim/vimrc.local
@@ -36,25 +36,21 @@ mkdir -p /etc/vim/bundle/template/
 
 COPY vim.py /etc/vim/bundle/template/
 
+
+COPY data/etc/rc.local /etc/rc.local
+COPY data/root/.bashrc /root/.bashrc
 COPY install.sh /tmp/install.sh
-
 RUN /tmp/install.sh;rm /tmp/install.sh
-
-COPY bashrc /root/.bashrc
-
-
 
 #COPY requirement.txt /tmp/requirement.txt
 #RUN /home/ol/.py3env/bin/pip install -r /tmp/requirement.txt
 
-RUN cp /root/.bashrc /home/ol/.bashrc;chown ol:ol /home/ol/.bashrc;
-
-COPY rc.local /etc/rc.local
 
 USER ol
 
 WORKDIR /home/ol
-RUN virtualenv .py3env
+
+
 
 USER root
 ENTRYPOINT ["/etc/rc.local"]

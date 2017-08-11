@@ -1,8 +1,15 @@
 #!/bin/bash
 
-USER_PID=5188
-groupadd -g $USER_PID ol
-useradd -u $USER_PID -g $USER_PID -s /bin/bash -m ol
+function INIT_USER {
+groupadd -g $2 $1
+useradd -u $2 -g $USER_PID -s /bin/bash -m $1
+echo -e "$1 ALL=(ALL) NOPASSWD: ALL\n" >> /etc/sudoers ;
+cp /root/.bashrc /home/$1/
+chown -R $1:$1 /home/$1/*
+}
+
+INIT_USER ol 5188
+INIT_USER dev 6188
 
 if [[ -a /etc/supervisor/conf.d/supervisord.conf ]]; then
 exit 0
