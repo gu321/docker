@@ -35,8 +35,9 @@ RUN git clone https://github.com/gu321/docker_home.git /home/docker --depth=1;\
 rsync -av /home/docker/home/ /root;
 
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim --depth=1;\
-vim +PluginInstall +qall;\
-sed -i '/colorscheme/ i colorscheme molokai' /etc/vim/vimrc.local;
+vim +PluginInstall +qall;
+
+#sed -i '/colorscheme/ i colorscheme molokai' /etc/vim/vimrc.local;
 
 RUN bash /tmp/install.sh;rm /tmp/install.sh
 
