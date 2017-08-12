@@ -23,7 +23,8 @@ pip3 install virtualenv autopep8 trash-cli;\
 cp /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime;\
 pip2 install hg-git ;\
 updatedb ;\
-cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp pm2 coffee-script;
+cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp pm2 coffee-script;\
+find /usr/local/lib/node_modules/pm2/node_modules/ -type f -exec chmod 644 {} \;
 
 
 RUN git clone https://github.com/gu321/docker.git /tmp/docker --depth=1;\
