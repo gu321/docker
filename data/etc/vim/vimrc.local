@@ -261,10 +261,15 @@ let g:autopep8_disable_show_diff=1
 "
 """""""""""""""""""""""""""""""""""""""
 
-"colorscheme
 
 set t_Co=256
 set background=dark
+let g:rehash256=1
+
+
+"colorscheme
+
+
 highlight Function ctermfg=184 ctermbg=0
 highlight NonText ctermfg=232 ctermbg=0
 highlight LineNr ctermfg=58 ctermbg=black
