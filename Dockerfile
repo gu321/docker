@@ -29,8 +29,8 @@ cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gul
 RUN git clone https://github.com/gu321/docker.git /tmp/docker --depth=1;\
 rsync -av /tmp/docker/data/ /;
 
-RUN git clone https://github.com/gu321/docker_home.git /root/docker_home --depth=1;\
-rsync -av /root/docker_home/home/ /root;
+RUN git clone https://github.com/gu321/docker_home.git /home/docker --depth=1;\
+rsync -av /home/docker/home/ /root;
 
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim --depth=1;\
 vim +PluginInstall +qall;\
