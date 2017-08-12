@@ -10,5 +10,7 @@ docker exec -it gu321 bash
 
 需要初始化home目录的代码见：
 
-https://github.com/gu321/docker_home
+git clone https://github.com/gu321/docker_home
+cd docker_home
+./init/dev.sh
 
