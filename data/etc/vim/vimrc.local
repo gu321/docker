@@ -3,7 +3,7 @@
 " bundle 插件管理
 " 首先执行下面的命令安装Vundle
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-"
+" 安装命令 PluginInstall
 """""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -22,7 +22,7 @@ Plugin 'gmarik/Vundle.vim'                  "插件管理
 " Plugin 'terryma/vim-multiple-cursors'       "多光标选择
 " Plugin 'vim-scripts/matchit.zip'            "html标签跳转
 "Plugin 'btyh17mxy/yapf.vim'
-Plugin 'altercation/vim-colors-solarized'   "配色方案
+Plugin 'tomasr/molokai'   "配色方案
 Plugin 'dyng/ctrlsf.vim'                    "让ag支持上下文
 Plugin 'ervandew/supertab'                  "supertab 补全
 Plugin 'godlygeek/tabular'                  "自动对齐
@@ -264,12 +264,6 @@ let g:autopep8_disable_show_diff=1
 "colorscheme
 
 set t_Co=256
-let g:solarized_termcolors=256
-let g:solarized_termtrans=1
-let g:solarized_bold=1
-let g:solarized_italic=1
-let g:solarized_underline=1
-let g:solarized_contrast="high"
 set background=dark
 highlight Function ctermfg=184 ctermbg=0
 highlight NonText ctermfg=232 ctermbg=0

@@ -36,7 +36,7 @@ rsync -av /home/docker/home/ /root;
 
 RUN git clone https://github.com/gmarik/Vundle.vim.git /usr/share/vim/vimfiles/bundle/Vundle.vim --depth=1;\
 vim +PluginInstall +qall;\
-sed -i '/colorscheme/ i colorscheme solarized' /etc/vim/vimrc.local;
+sed -i '/colorscheme/ i colorscheme molokai' /etc/vim/vimrc.local;
 
 RUN bash /tmp/install.sh;rm /tmp/install.sh
 
