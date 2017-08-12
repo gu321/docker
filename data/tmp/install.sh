@@ -31,3 +31,8 @@ pidfile=/var/run/supervisord.pid
 childlogdir=/var/log/supervisor
 EOF
 
+
+mkdir -p /tmp/pika
+cd /tmp/pika
+git clone --recursive https://github.com/Qihoo360/pika --depth=1
+
