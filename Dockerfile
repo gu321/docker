@@ -12,7 +12,7 @@ openssh-server libpython-dev python-dev libpq-dev \
 logrotate build-essential libsnappy-dev zlib1g-dev \
 python3 sudo curl libpython3-dev netcat libffi-dev \
 tree silversearcher-ag iputils-ping \
-rsync nodejs npm vim xtail;\
+rsync nodejs npm vim xtail whois;\
 locale-gen zh_CN.UTF-8; \
 curl https://bootstrap.pypa.io/get-pip.py|python3 ;\
 curl https://bootstrap.pypa.io/get-pip.py|python2 ;\
