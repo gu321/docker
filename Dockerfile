@@ -13,7 +13,7 @@ logrotate build-essential zlib1g-dev \
 python3 sudo curl libpython3-dev netcat libffi-dev \
 tree silversearcher-ag iputils-ping libgoogle-glog-dev \
 libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 \
-rsync nodejs npm vim xtail whois p7zip;\
+rsync nodejs npm vim xtail whois p7zip-full;\
 locale-gen zh_CN.UTF-8; \
 curl https://bootstrap.pypa.io/get-pip.py|python3 ;\
 curl https://bootstrap.pypa.io/get-pip.py|python2 ;\
