@@ -13,16 +13,16 @@ logrotate build-essential zlib1g-dev \
 python3 sudo curl libpython3-dev netcat libffi-dev \
 tree silversearcher-ag iputils-ping libgoogle-glog-dev \
 libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 \
-rsync nodejs npm vim xtail whois;\
+rsync nodejs npm vim xtail whois p7zip;\
 locale-gen zh_CN.UTF-8; \
 curl https://bootstrap.pypa.io/get-pip.py|python3 ;\
 curl https://bootstrap.pypa.io/get-pip.py|python2 ;\
 ln -s /usr/bin/nodejs /usr/bin/node;\
 npm install -g n;n stable;\
 npm install -g cnpm --registry=https://registry.npm.taobao.org; \
-pip3 install virtualenv autopep8 trash-cli;\
+pip3 install virtualenv autopep8 trash-cli ;\
 cp /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime;\
-pip2 install hg-git ;\
+pip2 install hg-git;\
 updatedb ;\
 cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp pm2 coffee-script;\
 find /usr/local/lib/node_modules/pm2/node_modules/ -type f -exec chmod 644 {} \;
