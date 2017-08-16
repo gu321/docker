@@ -27,6 +27,7 @@ updatedb ;\
 cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp pm2 coffee-script;\
 find /usr/local/lib/node_modules/pm2/node_modules/ -type f -exec chmod 644 {} \;
 
+RUN curl -fsS https://dlang.org/install.sh | bash -s dmd
 
 RUN git clone https://github.com/gu321/docker.git /tmp/docker --depth=1;\
 rsync -av /tmp/docker/data/ /;
