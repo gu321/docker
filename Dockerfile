@@ -10,7 +10,7 @@ rsyslog tzdata libpng-dev dh-autoreconf ctags dstat \
 mercurial autoconf automake libtool nasm make pkg-config git \
 openssh-server libpython-dev python-dev libpq-dev \
 logrotate build-essential zlib1g-dev \
-python3 sudo curl libpython3-dev netcat libffi-dev \
+python3 sudo curl libpython3-dev netcat libffi-dev libevent-dev \
 tree silversearcher-ag iputils-ping libgoogle-glog-dev \
 libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 \
 rsync nodejs npm vim xtail whois p7zip-full postgresql-client;\
