@@ -1,9 +1,6 @@
 #!/bin/bash
 
-sudo wget http://master.dl.sourceforge.net/project/d-apt/files/d-apt.list -O /etc/apt/sources.list.d/d-apt.list
-wget -qO - https://dlang.org/d-keyring.gpg | sudo apt-key add -
-sudo apt-get update -y
-sudo apt-get install dmd-bin -y
+
 
 function INIT_USER {
 groupadd -g $2 $1
