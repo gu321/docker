@@ -41,6 +41,7 @@ vim +PluginInstall +qall;
 #sed -i '/colorscheme/ i colorscheme molokai' /etc/vim/vimrc.local;
 
 RUN bash /tmp/install.sh;rm /tmp/install.sh
+RUN curl -fsS https://dlang.org/install.sh | bash -s dmd
 
 #COPY requirement.txt /tmp/requirement.txt
 #RUN /home/ol/.py3env/bin/pip install -r /tmp/requirement.txt
