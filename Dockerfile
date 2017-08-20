@@ -37,8 +37,9 @@ vim +PluginInstall +qall;
 
 #sed -i '/colorscheme/ i colorscheme molokai' /etc/vim/vimrc.local;
 
-RUN bash /tmp/install.sh;rm /tmp/install.sh
-RUN curl -fsS https://dlang.org/install.sh | bash -s dmd -p /opt/dlang ; find /opt/dlang -type d -exec chmod 755 {} \; updatedb ;
+RUN curl -fsS https://dlang.org/install.sh | bash -s dmd -p /opt/dlang ; find /opt/dlang -type d -exec chmod 755 {} \;
+
+RUN bash /tmp/install.sh;rm /tmp/install.sh; updatedb ;
 
 USER ol
 
