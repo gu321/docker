@@ -2,7 +2,6 @@ FROM ubuntu:17.10
 
 ENV DEBIAN_FRONTEND noninteractive
 
-
 RUN apt-get update ; \
 apt-get upgrade -y;\
 apt-get -y install supervisor cron locales mlocate tmux \
@@ -27,8 +26,6 @@ updatedb ;\
 cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp pm2 coffee-script;\
 find /usr/local/lib/node_modules/pm2/node_modules/ -type f -exec chmod 644 {} \;
 
-#RUN curl -fsS https://dlang.org/install.sh | bash -s dmd
-
 RUN git clone https://github.com/gu321/docker.git /tmp/docker --depth=1;\
 rsync -av /tmp/docker/data/ /;
 
@@ -43,14 +40,9 @@ vim +PluginInstall +qall;
 RUN bash /tmp/install.sh;rm /tmp/install.sh
 RUN curl -fsS https://dlang.org/install.sh | bash -s dmd -p /opt/dlang ; find /opt/dlang -type d -exec chmod 755 {} \;
 
-#COPY requirement.txt /tmp/requirement.txt
-#RUN /home/ol/.py3env/bin/pip install -r /tmp/requirement.txt
-
 USER ol
 
 WORKDIR /home/ol
-
-
 
 USER root
 ENTRYPOINT ["/etc/rc.local"]
