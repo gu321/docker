@@ -8,7 +8,7 @@ apt-get -y install supervisor cron locales mlocate tmux \
 htop rsyslog tzdata libpng-dev dh-autoreconf ctags dstat \
 mercurial autoconf automake libtool nasm make pkg-config git \
 openssh-server libpython-dev python-dev libpq-dev \
-logrotate build-essential zlib1g-dev cmake \
+logrotate build-essential zlib1g-dev cmake doxygen \
 python3 sudo curl libpython3-dev netcat libffi-dev libevent-dev \
 tree silversearcher-ag iputils-ping libgoogle-glog-dev \
 libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 \
