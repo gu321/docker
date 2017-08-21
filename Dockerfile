@@ -8,7 +8,7 @@ apt-get -y install supervisor cron locales mlocate tmux \
 htop rsyslog tzdata libpng-dev dh-autoreconf ctags dstat \
 mercurial autoconf automake libtool nasm make pkg-config git \
 openssh-server libpython-dev python-dev libpq-dev \
-logrotate build-essential zlib1g-dev \
+logrotate build-essential zlib1g-dev cmake \
 python3 sudo curl libpython3-dev netcat libffi-dev libevent-dev \
 tree silversearcher-ag iputils-ping libgoogle-glog-dev \
 libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 \
@@ -26,6 +26,14 @@ pip2 install hg-git;
 RUN cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp pm2 coffee-script;\
 find /usr/local/lib/node_modules/pm2/node_modules/ -type f -exec chmod 644 {} \;
 
+RUN cd /tmp;\
+git clone https://github.com/BYVoid/OpenCC.git --depth=1;\
+cd /tmp/OpenCC;\
+make;\
+make install;\
+cd /tmp;\
+rm -rf /tmp/OpenCC;
+
 RUN git clone https://github.com/gu321/docker.git /tmp/docker --depth=1;\
 rsync -av /tmp/docker/data/ /;
 
@@ -40,6 +48,7 @@ vim +PluginInstall +qall;
 RUN curl -fsS https://dlang.org/install.sh | bash -s dmd -p /opt/dlang ; find /opt/dlang -type d -exec chmod 755 {} \;
 
 RUN bash /tmp/install.sh;rm /tmp/install.sh; updatedb ;
+
 
 USER ol
 
