@@ -21,10 +21,8 @@ npm install -g n;n stable;\
 npm install -g cnpm --registry=https://registry.npm.taobao.org; \
 pip3 install virtualenv autopep8 trash-cli ;\
 cp /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime;\
-pip2 install hg-git;
-
-RUN cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp pm2 coffee-script;\
-find /usr/local/lib/node_modules/pm2/node_modules/ -type f -exec chmod 644 {} \;
+pip2 install hg-git;\
+cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp coffee-script;
 
 RUN cd /tmp;\
 git clone https://github.com/BYVoid/OpenCC.git --depth=1;\
