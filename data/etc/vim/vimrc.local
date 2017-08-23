@@ -7,7 +7,7 @@
 """""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
-
+set viminfo='100,<100000,s1000,h
 set rtp+=/usr/share/vim/vimfiles/bundle/Vundle.vim
 call vundle#rc('/usr/share/vim/vimfiles/bundle')
 Plugin 'Chiel92/vim-autoformat'
