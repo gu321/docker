@@ -11,7 +11,7 @@ openssh-server libpython-dev python-dev libpq-dev \
 logrotate build-essential zlib1g-dev cmake doxygen \
 python3 sudo curl libpython3-dev netcat libffi-dev libevent-dev \
 tree silversearcher-ag iputils-ping libgoogle-glog-dev \
-libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 \
+libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 ruby-dev \
 gist rsync nodejs npm vim xtail whois p7zip-full postgresql-client;\
 locale-gen zh_CN.UTF-8; \
 curl https://bootstrap.pypa.io/get-pip.py|python3 ;\
@@ -22,7 +22,10 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org; \
 pip3 install virtualenv autopep8 trash-cli ;\
 cp /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime;\
 pip2 install hg-git;\
-cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp coffee-script js-beautify;
+cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp coffee-script js-beautify;\
+gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/;\
+gem install sass;
+
 
 # vimrc.local 中的自动格式化需要用到 js-beautify
 
