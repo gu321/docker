@@ -65,22 +65,22 @@ autocmd FileType conf set commentstring=#\ %s
 "            自定义函数
 "
 """""""""""""""""""""""""""""""""""""""
-"定义 RunSrc()
+"定义 FormatRun()
 func RunPy2InPy3()
     call system("2to3-3.6 --fix=print --nobackups" . expand('%') . " -w &> /dev/null")
     exec ":e %"
     exec "!python %"
 endfunc
-"定义 RunSrc()
-func RunSrc()
+"定义 FormatRun()
+func FormatRun()
     "运行python
-    if &filetype == 'py'||&filetype == 'python'
-        exec "w"
-        call RunPy2InPy3()
-    endif
     if &filetype == 'html'
         call HtmlBeautify()
         exec "w"
+    endif
+    if &filetype == 'py'||&filetype == 'python'
+        exec "w"
+        call RunPy2InPy3()
     endif
     if &filetype == 'sh'
         exec "w"
@@ -91,7 +91,7 @@ func RunSrc()
         exec "w"
     endif
 endfunc
-"结束定义RunSrc
+"结束定义FormatRun
 
 "定义FormartSrc()
 "需使用以下的格式化插件https://bitbucket.org/zuroc/42qu-linux-config
@@ -364,7 +364,7 @@ set lazyredraw
 "解决组合快捷键导致某些快捷键变卡的问题
 "例如如果map了np, 就会导致搜索n有一个很长的反应时间
 set timeoutlen=200
-map <F12> :call RunSrc()<CR>
+map <F12> :call FormatRun()<CR>
 "map <F10> :SyntasticCheck pyflakes<CR>
 "map <F9> :SyntasticCheck python<CR>
 "map <F8> :res-1<CR>
@@ -392,7 +392,6 @@ nmap pe :lprev<cr>
 
 autocmd BufWritePre *.py :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)/e
 autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\t/    /e
-autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\s\+$//e
-autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+autocmd BufWrite *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :RemoveTrailingSpaces
 au BufWrite *.py,*.html,*.scss,*.css :Autoformat
 

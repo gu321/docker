@@ -22,7 +22,9 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org; \
 pip3 install virtualenv autopep8 trash-cli ;\
 cp /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime;\
 pip2 install hg-git;\
-cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp coffee-script;
+cnpm install -g pngquant-bin image-webpack-loader webpack webpack-dev-server gulp coffee-script js-beautify;
+
+# vimrc.local 中的自动格式化需要用到 js-beautify
 
 RUN cd /tmp;\
 git clone https://github.com/BYVoid/OpenCC.git --depth=1;\
