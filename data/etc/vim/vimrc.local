@@ -7,7 +7,6 @@
 """""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
-set viminfo='100,<100000,s1000,h
 set rtp+=/usr/share/vim/vimfiles/bundle/Vundle.vim
 call vundle#rc('/usr/share/vim/vimfiles/bundle')
 Plugin 'Chiel92/vim-autoformat'
@@ -395,3 +394,4 @@ autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\t/  
 autocmd BufWrite *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :RemoveTrailingSpaces
 au BufWrite *.py,*.html,*.scss,*.css :Autoformat
 
+set viminfo='100,<10000,s1000,h
