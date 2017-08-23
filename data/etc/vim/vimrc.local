@@ -1,4 +1,4 @@
-"""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""
 "
 " bundle 插件管理
 " 首先执行下面的命令安装Vundle
@@ -22,6 +22,7 @@ Plugin 'gmarik/Vundle.vim'                  "插件管理
 " Plugin 'terryma/vim-multiple-cursors'       "多光标选择
 " Plugin 'vim-scripts/matchit.zip'            "html标签跳转
 "Plugin 'btyh17mxy/yapf.vim'
+Plugin 'maksimr/vim-jsbeautify'
 Plugin 'dyng/ctrlsf.vim'                    "让ag支持上下文
 Plugin 'ervandew/supertab'                  "supertab 补全
 Plugin 'godlygeek/tabular'                  "自动对齐
@@ -57,6 +58,7 @@ autocmd FileType python set commentstring=#\ %s
 autocmd FileType html set commentstring=#\ %s
 autocmd FileType coffee set commentstring=#\ %s
 autocmd FileType sh set commentstring=#\ %s
+autocmd FileType conf set commentstring=#\ %s
 
 """""""""""""""""""""""""""""""""""""""
 "
@@ -71,17 +73,23 @@ func RunPy2InPy3()
 endfunc
 "定义 RunSrc()
 func RunSrc()
-    exec "w"
     "运行python
     if &filetype == 'py'||&filetype == 'python'
+        exec "w"
         call RunPy2InPy3()
     endif
     "使用zen-codeing补全html
     if &filetype == 'html'
-        call emmet#expandAbbr(3,"")
+        call HtmlBeautify() 
+        exec "w"
     endif
     if &filetype == 'sh'
+        exec "w"
         exec "!bash %"
+    endif
+    if &filetype == 'js'||&filetype == 'javascript'
+        call JsBeautify()
+        exec "w"
     endif
 endfunc
 "结束定义RunSrc
@@ -386,6 +394,6 @@ nmap pe :lprev<cr>
 autocmd BufWritePre *.py :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)/e
 autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\t/    /e
 autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\s\+$//e
-au BufWrite *.py,*.html,*.js,*.scss,*.css :Autoformat
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
+au BufWrite *.py,*.html,*.scss,*.css :Autoformat
 
