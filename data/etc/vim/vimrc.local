@@ -78,9 +78,8 @@ func RunSrc()
         exec "w"
         call RunPy2InPy3()
     endif
-    "使用zen-codeing补全html
     if &filetype == 'html'
-        call HtmlBeautify() 
+        call HtmlBeautify()
         exec "w"
     endif
     if &filetype == 'sh'
