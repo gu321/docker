@@ -27,7 +27,7 @@ gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/;\
 gem install sass;
 
 
-# vimrc.local 中的自动格式化需要用到 js-beautify
+# vimrc.local 中的自动格式化需要用到 js-beautify sass
 
 RUN cd /tmp;\
 git clone https://github.com/BYVoid/OpenCC.git --depth=1;\
