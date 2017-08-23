@@ -139,6 +139,7 @@ set number              "左侧显示行号
 "set ruler               "底部显示行列号
 set sw=4
 set ts=4
+set softtabstop=4 expandtab
 set expandtab
 set hlsearch            "搜索时匹配项高亮显示
 "set autoindent          "新行自动缩进
@@ -383,22 +384,8 @@ nmap ne :lnext<cr>
 nmap pe :lprev<cr>
 
 autocmd BufWritePre *.py :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)/e
-autocmd BufWritePre *.slm :%s/\t/    /e
-autocmd BufWritePre *.slm :%s/\s\+$//e
-autocmd BufWritePre *.py :%s/\s\+$//e
-autocmd BufWritePre *.conf :%s/\s\+$//e
-autocmd BufWritePre *.html :%s/\s\+$//e
-autocmd BufWritePre *.sh :%s/\s\+$//e
-autocmd BufWritePre *.sh :%s/\s\+$//e
-autocmd BufWritePre *.py :%s/\t/    /e
-autocmd BufWritePre *.coffee :%s/\s\+$//e
-autocmd BufWritePre *.coffee :%s/\t/    /e
-autocmd BufWritePre *.scss :%s/\s\+$//e
-autocmd BufWritePre *.js :%s/\s\+$//e
-" autocmd BufWritePre *.coffee :%s/\s\+$//e
-" autocmd BufWritePre *.coffee :%s/\t/    /e
-" autocmd BufWritePre *.scss :%s/\s\+$//e
-" autocmd BufWritePre *.js :%s/\s\+$//e
+autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\t/    /e
+autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\s\+$//e
 au BufWrite *.py,*.html,*.js,*.scss,*.css :Autoformat
 autocmd BufNewFile,BufReadPost *.coffee setl foldmethod=indent nofoldenable
 
