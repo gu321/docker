@@ -391,7 +391,7 @@ nmap pe :lprev<cr>
 
 autocmd BufWritePre *.py :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)/e
 autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\t/    /e
-autocmd BufWrite *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :RemoveTrailingSpaces
+autocmd BufWrite *.{txt,cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :RemoveTrailingSpaces
 au BufWrite *.py,*.html,*.scss,*.css :Autoformat
 
 set viminfo='100,<10000,s1000,h
