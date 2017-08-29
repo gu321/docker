@@ -81,6 +81,10 @@ func FormatRun()
         exec "w"
         call RunPy2InPy3()
     endif
+    if &filetype == 'coffee'
+        exec "w"
+        exec "!coffee %"
+    endif
     if &filetype == 'sh'
         exec "w"
         exec "!bash %"
