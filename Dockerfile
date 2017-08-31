@@ -5,6 +5,7 @@ ENV DEBIAN_FRONTEND noninteractive
 RUN apt-get update ; \
 apt-get upgrade -y;\
 apt-get -y install supervisor cron locales mlocate tmux \
+borgbackup \
 htop rsyslog tzdata libpng-dev dh-autoreconf ctags dstat \
 mercurial autoconf automake libtool nasm make pkg-config git \
 openssh-server libpython-dev python-dev libpq-dev \
