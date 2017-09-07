@@ -2,9 +2,11 @@ FROM ubuntu:17.10
 
 ENV DEBIAN_FRONTEND noninteractive
 
-RUN apt-get update ; \
-apt-get upgrade -y;\
-apt-get -y install supervisor cron locales mlocate tmux \
+RUN apt-get update ; apt-get upgrade -y;
+
+RUN apt-get -y install openssh-server iputils-ping;
+
+RUN apt-get -y install supervisor cron locales mlocate tmux \
 borgbackup \
 htop rsyslog tzdata libpng-dev dh-autoreconf ctags dstat \
 mercurial autoconf automake libtool nasm make pkg-config git \
@@ -16,7 +18,6 @@ libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 ruby-dev \
 gist rsync nodejs npm vim xtail whois p7zip-full postgresql-client;\
 locale-gen zh_CN.UTF-8; 
 
-RUN apt-get -y install openssh-server iputils-ping;
 
 RUN curl https://bootstrap.pypa.io/get-pip.py|python3 ;\
 curl https://bootstrap.pypa.io/get-pip.py|python2 ;\
