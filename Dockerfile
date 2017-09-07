@@ -14,8 +14,9 @@ python3 sudo curl libpython3-dev netcat libffi-dev libevent-dev \
 tree silversearcher-ag iputils-ping libgoogle-glog-dev \
 libzip-dev libsnappy-dev libprotobuf-dev protobuf-compiler bzip2 ruby-dev \
 gist rsync nodejs npm vim xtail whois p7zip-full postgresql-client;\
-locale-gen zh_CN.UTF-8; \
-curl https://bootstrap.pypa.io/get-pip.py|python3 ;\
+locale-gen zh_CN.UTF-8; 
+
+RUN curl https://bootstrap.pypa.io/get-pip.py|python3 ;\
 curl https://bootstrap.pypa.io/get-pip.py|python2 ;\
 ln -s /usr/bin/nodejs /usr/bin/node;\
 npm install -g n;n stable;\
