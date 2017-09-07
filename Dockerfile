@@ -4,10 +4,10 @@ ENV DEBIAN_FRONTEND noninteractive
 
 RUN apt-get update ; apt-get upgrade -y;
 
-RUN apt-get -y install openssh-server iputils-ping;
+RUN apt-get -y install openssh-server;
 
 RUN apt-get -y install supervisor cron locales mlocate tmux \
-borgbackup \
+borgbackup iputils-ping \
 htop rsyslog tzdata libpng-dev dh-autoreconf ctags dstat \
 mercurial autoconf automake libtool nasm make pkg-config git \
 libpython-dev python-dev libpq-dev \
