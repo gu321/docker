@@ -162,6 +162,7 @@ filetype indent on
 autocmd FileType python setlocal et sta sw=4 sts=4
 "python文件模板
 autocmd BufNewFile *.py 0r /etc/vim/bundle/template/vim.py
+autocmd BufNewFile *.coffee 0r /etc/vim/bundle/template/vim.coffee
 retab
 
 """""""""""""""""""""""""""""""""""""""
