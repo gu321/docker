@@ -12,6 +12,7 @@ chown -R $1:$1 /home/$1/*
 
 INIT_USER ol 5188
 INIT_USER dev 6188
+INIT_USER u88 7188
 
 if [[ -a /etc/supervisor/conf.d/supervisord.conf ]]; then
 exit 0
