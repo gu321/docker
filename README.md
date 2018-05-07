@@ -1,10 +1,8 @@
 # docker
 
-先登录daodocker
+先登录daodocker，username为zuroc
 
 docker login daocloud.io 
-
-登录xpure的邮箱
 
 然后运行
 
