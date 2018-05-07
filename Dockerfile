@@ -25,7 +25,8 @@ npm install -g cnpm --registry=https://registry.npm.taobao.org; \
 pip3 install virtualenv autopep8 trash-cli ;\
 cp /usr/share/zoneinfo/Asia/Hong_Kong /etc/localtime;\
 pip2 install hg-git;\
-cnpm install -g coffeelint pngquant-bin image-webpack-loader webpack webpack-dev-server gulp coffee-script js-beautify;\
+cnpm install -g coffeelint pngquant-bin image-webpack-loader webpack webpack-dev-server gulp coffee-script js-beautify yarn;\
+yarn config set registry 'https://registry.npm.taobao.org';\
 gem sources --add https://gems.ruby-china.org/ --remove https://rubygems.org/;\
 gem install sass;
 
