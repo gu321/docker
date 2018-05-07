@@ -14,3 +14,4 @@ git clone https://github.com/gu321/docker_home
 cd docker_home
 ./init/dev.sh
 
+各种常用的工具脚本见 https://gitee.com/gu321/docker
