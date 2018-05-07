@@ -6,7 +6,7 @@ RUN apt-get update ; apt-get upgrade -y;
 
 RUN apt-get -y install openssh-server;
 
-RUN apt-get -y install supervisor cron locales mlocate tmux \
+RUN apt-get -y install python3-pip python-pip supervisor cron locales mlocate tmux \
 borgbackup iputils-ping \
 htop rsyslog tzdata libpng-dev dh-autoreconf ctags dstat \
 mercurial autoconf automake libtool nasm make pkg-config git \
@@ -19,9 +19,7 @@ gist rsync nodejs npm vim xtail whois p7zip-full postgresql-client;\
 locale-gen zh_CN.UTF-8; 
 
 
-RUN curl https://bootstrap.pypa.io/get-pip.py|python3 ;\
-curl https://bootstrap.pypa.io/get-pip.py|python2 ;\
-ln -s /usr/bin/nodejs /usr/bin/node;\
+RUN ln -s /usr/bin/nodejs /usr/bin/node;\
 npm install -g n;n stable;\
 npm install -g cnpm --registry=https://registry.npm.taobao.org; \
 pip3 install virtualenv autopep8 trash-cli ;\
