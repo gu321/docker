@@ -2,11 +2,13 @@
 
 先登录daodocker
 
-docker login daocloud.io
+docker login daocloud.io 
+
+登录xpure的邮箱
 
 然后运行
 
-docker pull daocloud.io/miewx/gu321
+docker pull daocloud.io/zuroc/gu321
  
 手工运行命令
 
