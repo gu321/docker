@@ -12,6 +12,10 @@
 # By default this script does nothing.
 
 # rsyslogd
+
+
+echo -e "nameserver 119.29.29.29\nnameserver 182.254.116.116\nnameserver 223.5.5.5\nnameserver 223.6.6.6\n" > /etc/resolv.conf
+
 ulimit -c 0
 ulimit -n 8192
 /etc/init.d/cron start
