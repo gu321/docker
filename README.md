@@ -1,5 +1,13 @@
 # docker
 
+先登录daodocker
+
+docker login daocloud.io
+
+然后运行
+
+docker pull daocloud.io/miewx/gu321
+ 
 手工运行命令
 
 docker run -ti --rm --entrypoint="/bin/bash" daocloud.io/zuroc/gu321 -c bash 
