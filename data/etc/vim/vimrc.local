@@ -3,7 +3,7 @@
 " bundle 插件管理
 " 首先执行下面的命令安装Vundle
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" 安装命令 PluginInstall
+" 安装命令 :PluginInstall
 """""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -80,6 +80,10 @@ func FormatRun()
     if &filetype == 'py'||&filetype == 'python'
         exec "w"
         call RunPy2InPy3()
+    endif
+    if &filetype == 'xsh'
+        exec "w"
+        exec "!xonsh %"
     endif
     if &filetype == 'coffee'
         exec "w"
