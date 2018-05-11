@@ -3,12 +3,14 @@
 " bundle 插件管理
 " 首先执行下面的命令安装Vundle
 " git clone https://github.com/gmarik/Vundle.vim.git ~/.vim/bundle/Vundle.vim
-" 安装命令 :PluginInstall
+" 安装命令 
+" sudo vim +PluginInstall +qall
 """""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
 filetype off                  " required
 set rtp+=/usr/share/vim/vimfiles/bundle/Vundle.vim
 call vundle#rc('/usr/share/vim/vimfiles/bundle')
+Plugin 'posva/vim-vue'
 Plugin 'Chiel92/vim-autoformat'
 Plugin 'gmarik/Vundle.vim'                  "插件管理
 " Plugin 'Valloric/YouCompleteMe'             "自动补全
