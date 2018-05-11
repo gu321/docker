@@ -114,7 +114,7 @@ func FormartSrc()
     elseif &filetype == 'perl'
         exec "!astyle --style=gnu --suffix=none %"
     elseif &filetype == 'py'||&filetype == 'python'
-        exec "r !pydent % > /dev/null 2>&1"
+        exec "r !yapf -i % > /dev/null 2>&1"
     elseif &filetype == 'java'
         exec "!astyle --style=java --suffix=none %"
     elseif &filetype == 'jsp'
