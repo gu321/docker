@@ -405,7 +405,7 @@ nmap ne :lnext<cr>
 nmap pe :lprev<cr>
 
 autocmd BufWritePre *.py :%s/^\(\s*print\)\s\+\(.*\)/\1(\2)/e
-autocmd BufWritePre *.{cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\t/    /e
+autocmd BufWritePre *.{vue,cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :%s/\t/    /ge
 autocmd BufWrite *.{txt,cpp,c,d,slm,py,coffee,conf,html,sh,scss,css,js} :RemoveTrailingSpaces
 au BufWrite *.py,*.html,*.scss,*.css :Autoformat
 
