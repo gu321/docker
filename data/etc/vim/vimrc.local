@@ -7,6 +7,7 @@
 " sudo vim +PluginInstall +qall
 """""""""""""""""""""""""""""""""""""""
 set nocompatible              " be iMproved, required
+set mouse=
 filetype off                  " required
 set rtp+=/usr/share/vim/vimfiles/bundle/Vundle.vim
 call vundle#rc('/usr/share/vim/vimfiles/bundle')
